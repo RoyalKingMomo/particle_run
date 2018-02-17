@@ -26,5 +26,5 @@ app.use(function(req, res, next){
     next();
 
 app.listen(3000, function(){
-    console.log("ParticleRun is listening on PORT3000.");
+    console.log("Particle Run is listening on PORT3000.");
 });
