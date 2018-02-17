@@ -7,11 +7,11 @@
 
  // Standard library for onboard gps system
  #include "cellular_hal.h"
- #include "AssetTracker.h"
+ #include "google-maps-device-locator.h"
 
 STARTUP(cellular_credentials_set("isp.telus.com", "", "", NULL));
 
-AssetTracker t = AssetTracker();
+GoogleMapsDeviceLocator locator;
 
 // timers for gps data update
 unsigned long update_T = 0;
@@ -23,8 +23,7 @@ void setup() {
     Particle.keepAlive(30);
 
     // initalize asset tracker
-    t.begin();
-    t.gpsOn();
+    locator.withLocatePeriodic(5);
 
     // for debugging
     Serial.begin(9600);
@@ -33,8 +32,8 @@ void setup() {
 
 // loop() runs over and over again, as quickly as it can execute.
 void loop() {
-  // The core of your code will likely live here.
-  Serial.print("loop");
-  delay(5);
+  // Core publish code
+  locator.loop();
+
 
 }
