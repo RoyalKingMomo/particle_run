@@ -4,15 +4,17 @@ var express = require("express"),
     mongoose = require("mongoose"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
-    methodOverride = require("method-override");
+    methodOverride = require("method-override"),
+    User           = require("./models/user");
 
-mongoose.connect("mongodb://localhost/particlerun", {useMongoClient: true});
+var indexRoutes = require("./routes/index");
+
+mongoose.connect("mongodb://localhost/particlerun");
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-app.use(flash());
 
 // Passport Configuration
 app.use(passport.initialize());
@@ -24,6 +26,9 @@ passport.deserializeUser(User.deserializeUser());
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     next();
+});
+
+app.use("/", indexRoutes);
 
 app.listen(3000, function(){
     console.log("Particle Run is listening on PORT3000.");
