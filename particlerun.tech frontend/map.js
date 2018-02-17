@@ -1,12 +1,16 @@
 function initMap() {
+    //mapping and position
     var locationOfEle = {
-        lat: -25.363,
-        lng: 131.044
+        lat: 51.0779917,
+        lng: -114.1355364
     };
-    var zoom = 4;
+    var zoom = 15.66;
+
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         center: locationOfEle,
+        streetViewControl: false,
         styles: [
             {
                 "elementType": "geometry",
