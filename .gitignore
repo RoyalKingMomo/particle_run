@@ -1,3 +1,6 @@
+# MacOS Files
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -32,10 +35,6 @@ bower_components
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
 # Typescript v1 declaration files
 typings/
 
@@ -56,4 +55,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
