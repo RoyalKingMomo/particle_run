@@ -6,8 +6,10 @@
  */
 
 // Standard library for onboard gps system
+#include "cellular_hal.h"
 #include "google-maps-device-locator.h"
 
+STARTUP(cellular_credentials_set("isp.telus.com", "", "", NULL));
 
 GoogleMapsDeviceLocator locator;
 
@@ -19,6 +21,9 @@ unsigned long update_T = 0;
 const long delay_T = 5000;
 
 void setup() {
+
+    // setup particle publish mode
+    Particle.keepAlive(30);
 
     // change event name from default
     locator.withEventName("fr_electron");
@@ -36,7 +41,7 @@ void loop() {
     locator.loop();
 }
 
-// subscribe onLocation on gps fix located 
+// subscribe onLocation on gps fix located
 void onLocation(float lan, float lon, float accuracy) {
     Serial.print("lan: ");
     Serial.println(lan);
