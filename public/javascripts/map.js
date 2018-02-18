@@ -3,10 +3,9 @@ var map;
 var locationOfEle;
 var currentPathTaken;
 var currentPathTakenPlot;
-var updateF;
+var updateMan;
 
 function initMap() {
-    //updateF = setInterval(runFunction, 1000);
     //mapping and position
     locationOfEle = {
         lat: 51.0779917,
@@ -90,10 +89,6 @@ function updatePath() {
     // add new point (use the position from the click event)
     // update the polyline with the updated path
     currentPathTakenPlot.setPath(currentPathTaken);
-}
-
-function updatePathw() {
-
 }
 
 function makeMap() {
@@ -284,4 +279,8 @@ function makeMap() {
         minZoom: 3
     });
 
+}
+
+function shitTheBed() {
+    alert("I shat the bed");
 }
