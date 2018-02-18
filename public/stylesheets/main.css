@@ -3,3 +3,16 @@
     width: 100%;
     position: fixed;
 }
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none !important;
+}
+
+.container-fluid {
+    background-color: transparent;
+}
+
+body {
+    padding-top: 0px !important;
+}
