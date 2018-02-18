@@ -680,9 +680,7 @@ function getZoom() {
 }
 
 function liveDemo() {
-    while (i < futurePathTaken.length) {
-        doSomething(); //setTimeout(doSomething, 300);
-    }
+    setTimeout(doSomething, 300);
 }
 
 function doSomething() {
@@ -691,5 +689,6 @@ function doSomething() {
         currentPathTaken.push(new google.maps.LatLng(futurePathTaken[i]['lat'], futurePathTaken[i]['lng']));
         currentPathTakenPlot.setPath(currentPathTaken);
         i++;
+        setTimeout(doSomething, 300);
     }
 }
