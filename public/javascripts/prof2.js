@@ -16,7 +16,6 @@ var Run = require('../../models/run');
 var userDevice = particle.getDevice({deviceID: devID, auth: token});
 
 var eventRead = true;
-
 // put this in an export function as data stream
 function toggleEventStream(){
 
@@ -42,7 +41,7 @@ function toggleEventStream(){
 
                         var pos = new Positon({
                             lat: lt,
-                            lng; lg,
+                            lng: lg,
                             ts: t
                         });
 
