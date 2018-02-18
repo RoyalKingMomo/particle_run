@@ -189,35 +189,52 @@ function initMap() {
       }
     ]
   }
-]
+],
+        minZoom: 3
     });
 
     //data for path taken
     var currentPathTaken = [
         {
-            lat: 37.772,
-            lng: -122.214
+            lat: 53.444601,
+            lng: -113.613527
         },
         {
-            lat: 21.291,
-            lng: -157.821
+            lat: 53.444378,
+            lng: -113.613284
         },
         {
-            lat: -18.142,
-            lng: 178.431
+            lat: 53.443826,
+            lng: -113.613304
         },
         {
-            lat: -27.467,
-            lng: 153.027
+            lat: 53.442915,
+            lng: -113.613723
+        },
+        {
+            lat: 53.441770,
+            lng: -113.616024
+        },
+        {
+            lat: 53.416386,
+            lng: -113.493354
+        },
+        {
+            lat: 51.082547,
+            lng: -114.125788
+        },
+        {
+            lat: 51.080057,
+            lng: -114.130356
         }
         ];
 
     //plotting for path taken
-    var flightPath = new google.maps.Polyline({
+    var currentPathTakenPlot = new google.maps.Polyline({
         path: currentPathTaken,
         geodesic: true,
-        strokeColor: '#FF0000',
-        strokeOpacity: 1.0,
+        strokeColor: '#3399CC',
+        strokeOpacity: 0.8,
         strokeWeight: 2,
         map: map
     });
