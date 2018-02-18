@@ -12,6 +12,7 @@ function initMap() {
         center: locationOfEle,
         streetViewControl: false,
         mapTypeControl: false,
+        fullscreenControl: false,
         styles: [
             {
                 "elementType": "geometry",
