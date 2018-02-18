@@ -284,3 +284,13 @@ function makeMap() {
 function shitTheBed() {
     alert("I shat the bed");
 }
+
+function getCenter() {
+    for (i = 0; i < currentPathTaken.length; i++) {
+        alert(1);
+    }
+}
+
+function getZoom() {
+
+}
