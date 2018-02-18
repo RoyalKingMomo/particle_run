@@ -6,9 +6,10 @@ var runSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Position"
         }
-    ],
-    date: Date,
-    completionTime: Number,
-    averageSpeed: Number
+    ]
+    // date: Date,
+    // totalDistance: Number,
+    // completionTime: Number,
+    // averageSpeed: Number
 });
-module.exports = mongoose.model("Run", orderSchema);
+module.exports = mongoose.model("Run", runSchema);

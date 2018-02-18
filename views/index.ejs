@@ -3,4 +3,29 @@
     <!--Map Div-->
     <div id="map"></div>
 
+    <div id="startStopDiv">
+        <a onclick="shitTheBed()" id="startandstopbtn" class="btn btn-success">Start</a>
+        <script>
+            function start() {
+                updateMan = setInterval(updatePath, 3000);
+                var target = document.getElementById("startandstopbtn");
+                target.textContent = "Stop";
+                target.onclick = function onclick(event) {
+                    stop()
+                };
+            }
+
+            function stop() {
+                clearInterval(updateMan);
+                var target = document.getElementById("startandstopbtn");
+                target.textContent = "Start";
+                target.onclick = function onclick(event) {
+                    start()
+                };
+            }
+
+        </script>
+        <!--change start for a runtimeVariable-->
+    </div>
+
     <% include ./partials/footer %>

@@ -47,3 +47,18 @@ a:hover {
 li {
     list-style: none;
 }
+
+#startStopDiv {
+    position: fixed;
+    left: 20px;
+    width: 230px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    border-radius: 15px;
+    padding: 15 15 15 15;
+}
+
+#startStopDiv .btn {
+    width: 200px;
+}
