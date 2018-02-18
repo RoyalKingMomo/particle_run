@@ -1,7 +1,7 @@
 <% include ../partials/plainheader %>
 
 <div class="row">
-    <h1 style="text-align: center">Sign Up</h1>
+    <h1 style="text-align: center">Create a new account</h1>
     <div style="width: 30%; margin: 25px auto;">
         <form action="/user/register" method="post">
             <div class="form-group">
@@ -18,7 +18,7 @@
             </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Create Account</button>
             </div>
         </form>
         <p>Already have an account? <a href="/user/login">Sign In <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
