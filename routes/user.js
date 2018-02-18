@@ -3,19 +3,17 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 
-
-// AUTH //
-//Show register form
 router.get("/register", function(req, res){
     res.render("user/register", {page: "register"});
 });
 
-//Handle sign up logic
 router.post("/register", function(req, res){
     var newUser = new User({
         username: req.body.username,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        age: req.body.age,
+        weight: req.body.age
     });
     User.register(newUser, req.body.password, function(err, user){
         if(err){
@@ -29,12 +27,10 @@ router.post("/register", function(req, res){
     })
 });
 
-//Show login form
 router.get("/login", function(req, res){
     res.render("user/login", {page: "login"});
 });
 
-//Handles login logic using passport middleware
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/user/login",

@@ -8,16 +8,19 @@
                     <%= currentUser.lastName %>
             </h1>
             <p>
-                name: NAME
+                <%= currentUser.age %> y/o
             </p>
             <p>
-                age: AGE
+                <%= currentUser.weight %>lbs
             </p>
             <p>
-                weight: WEIGHT
-            </p>
-            <p>
-                runs: RUNSNO
+                <%= currentUser.runsCompleted %>
+
+                <% if(!currentUser.runs[0]){ %>
+                    Hello
+                <% } else { %>
+
+                <% } %>
             </p>
             <p>
                 totalKMs run: TOTALKM

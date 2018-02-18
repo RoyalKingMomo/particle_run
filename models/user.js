@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
-// passportLocalMongooseEmail = require('passport-local-mongoose-email');
 var passportLocalMongoose = require("passport-local-mongoose");
+var Run = require("../models/run");
+var Position = require("../models/position");
 
 var UserSchema = new mongoose.Schema({
     username: {
@@ -23,7 +24,7 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    runs: {
+    runsCompleted: {
         type: Number,
         required: false
     },

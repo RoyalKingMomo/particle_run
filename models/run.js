@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var Position = require("../models/position");
 
 var runSchema = new mongoose.Schema({
     position: [
