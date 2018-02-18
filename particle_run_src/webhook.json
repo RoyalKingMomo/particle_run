@@ -1,0 +1,14 @@
+{
+  "eventName":"deviceLocator",
+  "url": "https://www.googleapis.com/geolocation/v1/geolocate",
+  "headers" : {
+    "accept":"application/json",
+    "Content-Type" : "application/json"
+  },
+  "query":{
+    "key":""
+  },
+  "requestType": "POST",
+  "body" : "{\"cellTowers\":[{{#c.a}}{\"cellId\":{{i}},\"locationAreaCode\":{{l}},\"mobileCountryCode\":{{c}},\"mobileNetworkCode\":{{n}} }{{/c.a}}]}",
+  "noDefaults":"true"
+}
