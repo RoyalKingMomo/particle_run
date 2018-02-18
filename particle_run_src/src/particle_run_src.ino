@@ -24,6 +24,9 @@ void setup() {
     // particle byte setup for telus SIM integration
     Particle.keepAlive(30);
 
+    // setup particle publish mode
+    Particle.keepAlive(30);
+
     // change event name from default
     locator.withEventName("fr_electron");
 
