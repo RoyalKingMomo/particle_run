@@ -10,14 +10,23 @@ var moment = require('moment');
 
 var mongoose = require('mongoose');
 
+var Positon = require('../../models/position');
+var Run = require('../../models/run');
+
 var userDevice = particle.getDevice({deviceID: devID, auth: token});
 
 var eventRead = true;
 
 // put this in an export function as data stream
-function startEventStream(UserID){
+function startEventStream(){
 
     eventRead = true;
+
+    var n_run = new Run{
+        position: []
+    }
+
+    currentUser.runs.push(n_run);
 
     particle.getEventStream({deviceID: devID, name:'location', auth: token}).then(
         function(stream){
@@ -29,16 +38,15 @@ function startEventStream(UserID){
                     var lg = geoArr[1];
                     var t = moment().format();
 
-                    var obj = {
+                    var pos = new Positon{
                         lat: lt,
                         lng; lg,
                         ts: t
                     };
-                    
 
+                    currentUser.runs[runs.length-1].position.push(pos);
 
                 } else {
-                    // close mongo file
                     return;
                 }
 
