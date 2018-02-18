@@ -36,7 +36,7 @@ void loop() {
     locator.loop();
 }
 
-
+// subscribe onLocation on gps fix located 
 void onLocation(float lan, float lon, float accuracy) {
     Serial.print("lan: ");
     Serial.println(lan);
