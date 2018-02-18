@@ -18,20 +18,22 @@ var userDevice = particle.getDevice({deviceID: devID, auth: token});
 var eventRead = true;
 
 // put this in an export function as data stream
-document.getElementById("#startandstopbtn").onclick = function toggleEventStream(){
-    if(==){
+function toggleEventStream(){
+
         eventRead = true;
 
-        var n_run = new Run({
-            position: []
-        });
+        if (document.getElementById("startandstopbtn").textContent === "Stop"){
+            var n_run = new Run({
+                position: []
+            });
 
-        currentUser.runs.push(n_run);
+            currentUser.runs.push(n_run);
+        }
 
         particle.getEventStream({deviceID: devID, name:'location', auth: token}).then(
             function(stream){
                 stream.on('event', function(e){
-                    if (document.getElementById("startandstopbtn") === "Start"){
+                    if (document.getElementById("startandstopbtn").textContent === "Stop"){
                         console.log(e);
                         var geoArr = JSON.parse("[" + e.data + "]");
                         var lt = geoArr[0];
@@ -46,13 +48,13 @@ document.getElementById("#startandstopbtn").onclick = function toggleEventStream
 
                         currentUser.runs[runs.length-1].position.push(pos);
 
-                    } else {
+                    } else if (document.getElementById("startandstopbtn").textContent === "Start"){
+                        eventRead = false;
+                        return;
+                    } else if (eventRead == false){
                         return;
                     }
 
                 })
             })
-    } else {
-        eventRead = false;
-    }
 }
