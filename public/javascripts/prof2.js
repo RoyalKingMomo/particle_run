@@ -17,7 +17,6 @@ var userDevice = particle.getDevice({deviceID: devID, auth: token});
 
 var eventRead = true;
 
-
 // put this in an export function as data stream
 function toggleEventStream(currentUser){
 
