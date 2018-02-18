@@ -8,9 +8,5 @@ var UserSchema = new mongoose.Schema({
     firstName: {type: String, required: false},
     lastName: {type: String, required: false}
 });
-
-// UserSchema.plugin(passportLocalMongooseEmail, {
-//     usernameField: 'email',
-// });
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", UserSchema);
