@@ -1,16 +1,13 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-var csrf = require("csurf");
 var User = require("../models/user");
 
-var csrfProtection = csrf();
-router.use(csrfProtection);
 
 // AUTH //
 //Show register form
 router.get("/register", function(req, res){
-    res.render("user/register", {page: "register", csrfToken: req.csrfToken()});
+    res.render("user/register", {page: "register"});
 });
 
 //Handle sign up logic
@@ -34,7 +31,7 @@ router.post("/register", function(req, res){
 
 //Show login form
 router.get("/login", function(req, res){
-    res.render("user/login", {page: "login", csrfToken: req.csrfToken()});
+    res.render("user/login", {page: "login"});
 });
 
 //Handles login logic using passport middleware
