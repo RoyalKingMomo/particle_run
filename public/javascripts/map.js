@@ -1,13 +1,103 @@
+var zoom;
+var map;
+var locationOfEle;
+var currentPathTaken;
+var currentPathTakenPlot;
+var updateF;
+
 function initMap() {
+    //updateF = setInterval(runFunction, 1000);
     //mapping and position
-    var locationOfEle = {
+    locationOfEle = {
         lat: 51.0779917,
         lng: -114.1355364
     };
-    var zoom = 15.66;
+    zoom = 15.66;
 
     //map and styling
-    var map = new google.maps.Map(document.getElementById('map'), {
+    makeMap();
+
+    //data for path taken
+    currentPathTaken = [
+        {
+            lat: 53.444601,
+            lng: -113.613527
+        },
+        {
+            lat: 53.444378,
+            lng: -113.613284
+        },
+        {
+            lat: 53.443826,
+            lng: -113.613304
+        },
+        {
+            lat: 53.442915,
+            lng: -113.613723
+        },
+        {
+            lat: 53.441770,
+            lng: -113.616024
+        },
+        {
+            lat: 53.416386,
+            lng: -113.493354
+        },
+        {
+            lat: 51.082547,
+            lng: -114.125788
+        },
+        {
+            lat: 51.080057,
+            lng: -114.130356
+        }
+        ];
+
+    //plotting for path taken
+    currentPathTakenPlot = new google.maps.Polyline({
+        path: currentPathTaken,
+        geodesic: true,
+        strokeColor: '#3399CC',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        map: map
+    });
+
+    google.maps.event.addListener(currentPathTakenPlot, 'click', function (h) {
+        updatePath();
+    });
+}
+
+function updatePath() {
+    currentPathTaken = [
+        {
+            lat: 53.444601,
+            lng: -113.613527
+        },
+        {
+            lat: 53.444378,
+            lng: -113.613284
+        },
+        {
+            lat: 53.443826,
+            lng: -113.613304
+        },
+        {
+            lat: 53.442915,
+            lng: -113.613723
+        }
+    ];
+    // add new point (use the position from the click event)
+    // update the polyline with the updated path
+    currentPathTakenPlot.setPath(currentPathTaken);
+}
+
+function updatePathw() {
+
+}
+
+function makeMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         center: locationOfEle,
         streetViewControl: false,
@@ -194,49 +284,4 @@ function initMap() {
         minZoom: 3
     });
 
-    //data for path taken
-    var currentPathTaken = [
-        {
-            lat: 53.444601,
-            lng: -113.613527
-        },
-        {
-            lat: 53.444378,
-            lng: -113.613284
-        },
-        {
-            lat: 53.443826,
-            lng: -113.613304
-        },
-        {
-            lat: 53.442915,
-            lng: -113.613723
-        },
-        {
-            lat: 53.441770,
-            lng: -113.616024
-        },
-        {
-            lat: 53.416386,
-            lng: -113.493354
-        },
-        {
-            lat: 51.082547,
-            lng: -114.125788
-        },
-        {
-            lat: 51.080057,
-            lng: -114.130356
-        }
-        ];
-
-    //plotting for path taken
-    var currentPathTakenPlot = new google.maps.Polyline({
-        path: currentPathTaken,
-        geodesic: true,
-        strokeColor: '#3399CC',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        map: map
-    });
 }
