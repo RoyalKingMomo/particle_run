@@ -1,6 +1,62 @@
 <% include ../partials/header %>
 
-<h1>Profile</h1>
+    <section class="profileSection">
+        <div class="welcomeMessage">
+            <h1>
+                Welcome,
+                <%= currentUser.firstName %>
+                    <%= currentUser.lastName %>
+            </h1>
+            <p>
+                name: NAME
+            </p>
+            <p>
+                age: AGE
+            </p>
+            <p>
+                weight: WEIGHT
+            </p>
+            <p>
+                runs: RUNSNO
+            </p>
+            <p>
+                totalKMs run: TOTALKM
+            </p>
+        </div>
+        <div class="previousRuns">
+            <h3>Here are your previous runs:</h3>
+            <ul>
+                <li>
+                    <a href="#">swag</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">gucci</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">gxcci</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">tbhwtf</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">blackbear is lit</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">Sunday 18, Feb 2018, 02:37:15</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
 
-<% include ../partials/footer %>
+    <% include ../partials/footer %>

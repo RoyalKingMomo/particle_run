@@ -16,3 +16,34 @@
 body {
     padding-top: 0px !important;
 }
+
+.profileSection {
+    padding-top: 50px;
+    padding-left: 20px;
+    background-color: black;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: white;
+}
+
+.previousRuns {
+    margin-top: 4em;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #999999;
+}
+
+li {
+    list-style: none;
+}
