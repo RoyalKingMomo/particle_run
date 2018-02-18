@@ -7,7 +7,8 @@ var express = require("express"),
     methodOverride = require("method-override"),
     User           = require("./models/user");
 
-var indexRoutes = require("./routes/index");
+var indexRoutes = require("./routes/index"),
+    userRoutes = require("./routes/user");
 
 mongoose.connect("mongodb://localhost/particlerun");
 mongoose.Promise = global.Promise;
@@ -29,6 +30,7 @@ app.use(function(req, res, next){
 });
 
 app.use("/", indexRoutes);
+app.use("/user", userRoutes);
 
 app.listen(3000, function(){
     console.log("Particle Run is listening on PORT3000.");

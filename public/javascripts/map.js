@@ -1,12 +1,17 @@
 function initMap() {
+    //mapping and position
     var locationOfEle = {
-        lat: -25.363,
-        lng: 131.044
+        lat: 51.0779917,
+        lng: -114.1355364
     };
-    var zoom = 4;
+    var zoom = 15.66;
+
+    //map and styling
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         center: locationOfEle,
+        streetViewControl: false,
+        mapTypeControl: false,
         styles: [
             {
                 "elementType": "geometry",
@@ -187,6 +192,7 @@ function initMap() {
 ]
     });
 
+    //data for path taken
     var currentPathTaken = [
         {
             lat: 37.772,
@@ -205,4 +211,14 @@ function initMap() {
             lng: 153.027
         }
         ];
+
+    //plotting for path taken
+    var flightPath = new google.maps.Polyline({
+        path: currentPathTaken,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+        map: map
+    });
 }
