@@ -2,33 +2,34 @@
 
     <!--Map Div-->
     <% console.log(currentUser) %>
-    <div id="map"></div>
+        <div id="map"></div>
 
-    <div id="startStopDiv">
-        <a onclick="start()" id="startandstopbtn" class="btn btn-success">Start</a>
-        <script>
-            function start() {
-                var target = document.getElementById("startandstopbtn");
-                target.textContent = "Stop";
-                updateMan = setInterval(updatePath, 3000);
-                target.onclick = function onclick(event) {
-                    stop()
-                };
-                toggleEventStream();
-            }
+        <div id="startStopDiv">
+            <a onclick="start()" id="startandstopbtn" class="btn btn-success">Start</a>
+            <a style="margin-top:20px;" onclick="liveDemo()" id="liveDemo()" class="btn btn-success">Do Live Demo</a>
+            <script>
+                function start() {
+                    var target = document.getElementById("startandstopbtn");
+                    target.textContent = "Stop";
+                    updateMan = setInterval(updatePath, 3000);
+                    target.onclick = function onclick(event) {
+                        stop()
+                    };
+                    toggleEventStream();
+                }
 
-            function stop() {
-                clearInterval(updateMan);
-                var target = document.getElementById("startandstopbtn");
-                target.textContent = "Start";
-                target.onclick = function onclick(event) {
-                    start()
-                };
-                toggleEventStream();
-            }
+                function stop() {
+                    clearInterval(updateMan);
+                    var target = document.getElementById("startandstopbtn");
+                    target.textContent = "Start";
+                    target.onclick = function onclick(event) {
+                        start()
+                    };
+                    toggleEventStream();
+                }
 
-        </script>
-        <!--change start for a runtimeVariable-->
-    </div>
+            </script>
+            <!--change start for a runtimeVariable-->
+        </div>
 
-    <% include ./partials/footer %>
+        <% include ./partials/footer %>
