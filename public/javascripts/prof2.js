@@ -18,44 +18,41 @@ var userDevice = particle.getDevice({deviceID: devID, auth: token});
 var eventRead = true;
 
 // put this in an export function as data stream
-function startEventStream(){
+document.getElementById("#startandstopbtn").onclick = function toggleEventStream(){
+    if(==){
+        eventRead = true;
 
-    eventRead = true;
+        var n_run = new Run({
+            position: []
+        });
 
-    var n_run = new Run({
-        position: []
-    });
+        currentUser.runs.push(n_run);
 
-    currentUser.runs.push(n_run);
+        particle.getEventStream({deviceID: devID, name:'location', auth: token}).then(
+            function(stream){
+                stream.on('event', function(e){
+                    if (document.getElementById("startandstopbtn") === "Start"){
+                        console.log(e);
+                        var geoArr = JSON.parse("[" + e.data + "]");
+                        var lt = geoArr[0];
+                        var lg = geoArr[1];
+                        var t = moment().format();
 
-    particle.getEventStream({deviceID: devID, name:'location', auth: token}).then(
-        function(stream){
-            stream.on('event', function(e){
-                if (eventRead){
-                    console.log(e);
-                    var geoArr = JSON.parse("[" + e.data + "]");
-                    var lt = geoArr[0];
-                    var lg = geoArr[1];
-                    var t = moment().format();
+                        var pos = new Positon({
+                            lat: lt,
+                            lng; lg,
+                            ts: t
+                        });
 
-                    var pos = new Positon({
-                        lat: lt,
-                        lng; lg,
-                        ts: t
-                    });
+                        currentUser.runs[runs.length-1].position.push(pos);
 
-                    currentUser.runs[runs.length-1].position.push(pos);
+                    } else {
+                        return;
+                    }
 
-                } else {
-                    return;
-                }
-
+                })
             })
-        })
+    } else {
+        eventRead = false;
+    }
 }
-
-function stopEventStream(){
-    eventRead = false;
-}
-
-startEventStream();
