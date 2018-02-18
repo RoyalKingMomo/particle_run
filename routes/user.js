@@ -1,19 +1,13 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-var csrf = require("csurf");
 var User = require("../models/user");
 
-var csrfProtection = csrf();
-router.use(csrfProtection);
 
-// AUTH //
-//Show register form
 router.get("/register", function(req, res){
-    res.render("user/register", {page: "register", csrfToken: req.csrfToken()});
+    res.render("user/register", {page: "register"});
 });
 
-//Handle sign up logic
 router.post("/register", function(req, res){
     var newUser = new User({
         username: req.body.username,
@@ -22,41 +16,34 @@ router.post("/register", function(req, res){
     });
     User.register(newUser, req.body.password, function(err, user){
         if(err){
-            req.flash("error", err.message);
+            console.log(err);
             return res.redirect("/user/register");
         }
         passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to Particle Run " + user.username);
             res.redirect("/");
         })
     })
 });
 
-//Show login form
 router.get("/login", function(req, res){
-    res.render("user/login", {page: "login", csrfToken: req.csrfToken()});
+    res.render("user/login", {page: "login"});
 });
 
-//Handles login logic using passport middleware
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/user/login",
-    failureFlash: true
+    failureRedirect: "/user/login"
     }), function(req, res){
 });
 
-//Logout route
 router.get("/logout", function(req, res){
     req.logout();
-    req.flash("success", "Signed out");
     res.redirect("/");
 });
 
-//User Profile
 router.get("/:id", function(req, res){
     User.findById(req.params.id, function(err, foundUser){
         if(err){
-            req.flash("error", err.message);
+            console.log(err)
             return res.redirect("/");
         }
         res.render("user/profile", {user: foundUser});
