@@ -22,9 +22,9 @@ function startEventStream(){
 
     eventRead = true;
 
-    var n_run = new Run{
+    var n_run = new Run({
         position: []
-    }
+    });
 
     currentUser.runs.push(n_run);
 
@@ -38,11 +38,11 @@ function startEventStream(){
                     var lg = geoArr[1];
                     var t = moment().format();
 
-                    var pos = new Positon{
+                    var pos = new Positon({
                         lat: lt,
                         lng; lg,
                         ts: t
-                    };
+                    });
 
                     currentUser.runs[runs.length-1].position.push(pos);
 
