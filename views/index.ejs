@@ -7,9 +7,10 @@
         <a onclick="start()" id="startandstopbtn" class="btn btn-success">Start</a>
         <script>
             function start() {
-                updateMan = setInterval(updatePath, 3000);
                 var target = document.getElementById("startandstopbtn");
                 target.textContent = "Stop";
+                updateMan = setInterval(updatePath, 3000);
+                toggleEventStream();        
                 target.onclick = function onclick(event) {
                     stop()
                 };
@@ -19,6 +20,7 @@
                 clearInterval(updateMan);
                 var target = document.getElementById("startandstopbtn");
                 target.textContent = "Start";
+                toggleEventStream();
                 target.onclick = function onclick(event) {
                     start()
                 };
