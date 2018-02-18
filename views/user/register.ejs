@@ -1,5 +1,6 @@
 <% include ../partials/plainheader %>
 
+<<<<<<< HEAD
 <div class="container">
     <form action="/user/register" method="post">
         <h1 style="text-align: center">Create a new account</h1>
@@ -23,6 +24,30 @@
                 <p>Already have an account? <a href="/user/login">Sign In <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
             </form>
         </div>
+=======
+<div class="row">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/user/register" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="/user/login">Sign In <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+>>>>>>> parent of 9bb6dbc... Fixed naming of auth pages
     </div>
 </div>
 
