@@ -11,6 +11,8 @@ router.get("/register", function(req, res){
 router.post("/register", function(req, res){
     var newUser = new User({
         username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
     });
     User.register(newUser, req.body.password, function(err, user){
         if(err){
@@ -18,7 +20,7 @@ router.post("/register", function(req, res){
             return res.redirect("/user/register");
         }
         passport.authenticate("local")(req, res, function(){
-            res.redirect("/###");
+            res.redirect("/");
         })
     })
 });
@@ -28,21 +30,21 @@ router.get("/login", function(req, res){
 });
 
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "/###",
+    successRedirect: "/",
     failureRedirect: "/user/login"
     }), function(req, res){
 });
 
 router.get("/logout", function(req, res){
     req.logout();
-    res.redirect("/###");
+    res.redirect("/");
 });
 
 router.get("/:id", function(req, res){
     User.findById(req.params.id, function(err, foundUser){
         if(err){
             console.log(err)
-            return res.redirect("/###");
+            return res.redirect("/");
         }
         res.render("user/profile", {user: foundUser});
     });
