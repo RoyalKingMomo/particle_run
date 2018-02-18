@@ -34,7 +34,13 @@ var UserSchema = new mongoose.Schema({
     totalKMs: {
         type: Number,
         required: false
-    }
+    },
+    runs: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Run"
+        }
+    ]
 });
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", UserSchema);
