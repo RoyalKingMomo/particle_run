@@ -10,20 +10,20 @@
                 var target = document.getElementById("startandstopbtn");
                 target.textContent = "Stop";
                 updateMan = setInterval(updatePath, 3000);
-                toggleEventStream();        
                 target.onclick = function onclick(event) {
                     stop()
                 };
+                toggleEventStream();
             }
 
             function stop() {
                 clearInterval(updateMan);
                 var target = document.getElementById("startandstopbtn");
                 target.textContent = "Start";
-                toggleEventStream();
                 target.onclick = function onclick(event) {
                     start()
                 };
+                toggleEventStream();
             }
 
         </script>
