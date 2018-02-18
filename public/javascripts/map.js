@@ -69,21 +69,21 @@ function initMap() {
 
 function updatePath() {
     currentPathTaken = [
-        {
-            lat: 53.444601,
-            lng: -113.613527
+    {
+        lat: 53.444601,
+        lng: -113.613527
         },
-        {
-            lat: 53.444378,
-            lng: -113.613284
+    {
+        lat: 53.444378,
+        lng: -113.613284
         },
-        {
-            lat: 53.443826,
-            lng: -113.613304
+    {
+        lat: 53.443826,
+        lng: -113.613304
         },
-        {
-            lat: 53.442915,
-            lng: -113.613723
+    {
+        lat: 53.442915,
+        lng: -113.613723
         }
     ];
     // add new point (use the position from the click event)
