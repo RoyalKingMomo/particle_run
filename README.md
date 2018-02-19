@@ -47,16 +47,17 @@ $ mongod
 
 ### Images
 <img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/map.png" width="450" height= "300">
-* User run map screen<br/>
+* User run map screen - To view user's run location, path and other data which can be added as each point is stored as a timestamped node in the database<br/>
+
 <img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/sign_in.png" width="280" height="200"> <img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/new_user.png" width="280" height="200"> <br/>
-* Login screen<br/>
+* Login screen - To login for a current user and sign up for a new user, additional data like weight and height can later be used for health data<br/>
 <img src = "https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/profile.png" width="320"><br/>
-* Profile screen<br/>
+* Profile screen - <br/>
 
 ## Authors
 * __Danish Dua__ - _Software engineering student at University of Alberta_ - [GitHub](https://github.com/dandua98)
 * __Sean Mai__ - _Software engineering student at University of Calgary_ - [GitHub](https://github.com/seanmai)
-* __Mohammad Al-Ahdal__ - _Software engineering student at University of Alberta_ - [GitHub](https://github.com/RoyalKingMomo)
+* __Mohammad Al-Ahdal__ - _Electrical engineering student at University of Alberta_ - [GitHub](https://github.com/RoyalKingMomo)
 
 ## License
 The project is licensed under MIT License - see the [LICENSE](https://github.com/CalgaryHacks2018/particle_run/blob/master/LICENSE "LICENSE") file for details
