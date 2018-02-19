@@ -50,7 +50,7 @@ $ mongod
 * User run map screen - To view user's run location, path and other data which can be added as each point is stored as a timestamped node in the database<br/>
 
 
-<img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/sign_in.png"  style="margin-right: 10px; width: 50%"> <img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/new_user.png style="margin-left: 10px; width: 50%"> <br/>
+<img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/sign_in.png"  style="margin-right: 10px; width: 50%"> <img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/new_user.png" style="margin-left: 10px; width: 50%"> <br/>
 * Login screen - To login for a current user and sign up for a new user, additional data like weight and height can later be used for health data<br/>
 
 <img src = "https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/profile.png" width="450"><br/>
