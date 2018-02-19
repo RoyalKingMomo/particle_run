@@ -46,7 +46,7 @@ $ mongod
 ```
 
 ## Web framework images
-<img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/map.png" width="450" height= "300"><br/>
+<img src="https://github.com/CalgaryHacks2018/particle_run/blob/master/common/images/map.png" width="600" height= "400"><br/>
 * User run map screen - To view user's run location, path and other data which can be added as each point is stored as a timestamped node in the database<br/>
 
 
